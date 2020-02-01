@@ -29,7 +29,7 @@ public class SwitchStatementDemo {
 			switch(x) {
 			case 0: 
 				System.out.println("0");
-				break;
+			break;
 			case 1: 
 				System.out.println("1");
 				break;
