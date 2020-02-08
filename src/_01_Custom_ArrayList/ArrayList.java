@@ -8,12 +8,11 @@ public class ArrayList <T>{
 	}
 	
 	public int get(int loc) throws IndexOutOfBoundsException {
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.add(0);
-		list.add(1);
-		list.add(206);
-	
-		return 0;
+	ArrayList<Integer> lists = new ArrayList<Integer>();
+	lists.add(0);
+	lists.add(1);
+	lists.add(206);
+	return lists.get(loc);
 	}
 	
 	public void add(T val) {
@@ -29,19 +28,7 @@ public class ArrayList <T>{
 	}
 	
 	public void remove(int loc) throws IndexOutOfBoundsException {
-		class Student { 
-			public String name; 
-			public Student(String s) {
-				name = s;
-			}
-		}
-		ArrayList<Student> list = new ArrayList<Student>();
-		list.add(new Student("Tim"));
-		list.add(new Student("Sara"));
-		list.add(new Student("Kamara"));
-		list.add(new Student("Devaugn"));
 		
-		list.remove(0);
 	}
 	
 	public boolean contains(T val) {

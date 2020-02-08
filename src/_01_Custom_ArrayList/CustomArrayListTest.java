@@ -15,8 +15,8 @@ public class CustomArrayListTest {
 		list.add(206);
 	
 		if(list.get(0) != 0) fail("list.get(0) returning improper value.");
-	//	if(list.get(1) != 1) fail("list.get(1) returning improper value.");
-		//if(list.get(2) != 206) fail("list.get(2) returning improper value.");
+	if(list.get(1) != 1) fail("list.get(1) returning improper value.");
+	if(list.get(2) != 206) fail("list.get(2) returning improper value.");
 	}
 	/*
 	@Test
@@ -26,13 +26,16 @@ public class CustomArrayListTest {
 		list.add("ONE");
 		list.add("TWO");
 		list.add("THREE");
+		ArrayList<String> list1 = new ArrayList<String>();
+		list1.add("TESTER");
+		list1.add("ONE");
+		list1.add("PICKLES");
+		list1.add("THREE");
 		
-		list.set(2, "PICKLES");
-		
-		if(!list.get(0).equals("TESTER")) fail("list.get(0) returning improper value.");
-		if(!list.get(1).equals("ONE"))  fail("list.get(1) returning improper value.");
-		if(!list.get(2).equals("PICKLES"))  fail("list.get(2) returning improper value.");
-		if(!list.get(3).equals("THREE"))  fail("list.get(3) returning improper value.");
+			if(list.get(0)!=list1.get(0)) fail("list.get(0) returning improper value.");
+		if(list.get(1)!=list1.get(1))  fail("list.get(1) returning improper value.");
+		if(list.get(2)!=list1.get(2))  fail("list.get(2) returning improper value.");
+		if(list.get(3)!=list1.get(3))  fail("list.get(3) returning improper value.");
 	}
 	
 	@Test
@@ -86,7 +89,7 @@ public class CustomArrayListTest {
 			fail("list.get(1) returning improper value.");
 		}
 	}
-	*/
+	
 	@Test
 	public void testContains() {
 		ArrayList<String> list = new ArrayList<String>();
@@ -102,7 +105,7 @@ public class CustomArrayListTest {
 		assertFalse(list.contains("a"));
 		assertFalse(list.contains("test"));
 	}
-	/*
+	
 	@Test
 	public void testSize() {
 		ArrayList<String> list = new ArrayList<String>();
