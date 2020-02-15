@@ -37,6 +37,21 @@ public class Snake {
 		//1. use a switch statement to check on the currentDirection
 		//   of the snake and calculate its next x and y position.
 		
+		switch(currentDirection) {
+		case DOWN:{
+		
+		}
+		case UP:{
+			
+		}
+		case LEFT:{
+			
+		}
+		case RIGHT:{
+			
+		}
+		}
+		
 
 		//2. Iterate through the SnakeSegments in reverse order
 		//2a. Update each snake segment to the location of the segment 
