@@ -25,7 +25,7 @@ public class Snake {
 
 	public void feed() {
 		// 1. add a new SnakeSegment object to the snake
-		snake.add(new SnakeSegment(snake.get(0).getLocation(), BODY_SIZE));
+		snake.add(new SnakeSegment(snake.get(snake.size()-1).getLocation(), BODY_SIZE));
 	}
 
 	public Location getHeadLocation() {
@@ -39,29 +39,43 @@ public class Snake {
 		Location Newloc = getHeadLocation();
 		switch (currentDirection) {
 		case DOWN: {
-
 			Newloc.y = Newloc.y + 1;
+			break;
 		}
 		case UP: {
 			Newloc.y = Newloc.y - 1;
+			break;
 		}
 		case LEFT: {
 			Newloc.x = Newloc.x - 1;
+			break;
 		}
 		case RIGHT: {
 			Newloc.x = Newloc.x + 1;
+			break;
 		}
 		}
 
 		// 2. Iterate through the SnakeSegments in reverse order
 		// 2a. Update each snake segment to the location of the segment
 		// in front of it.
-		for (int i = snake.size() - 1; i <= 0; i--) {
-			if (i != 0) {
-				snake.get(i).setLocation(snake.get(i - 1).getLocation());
-			} else {
-				snake.get(i).setLocation(getHeadLocation());
+		for (int i = snake.size() - 1; i <0; i--) {
+			Location l = snake.get(i-1).getLocation();
+			if(currentDirection.equals(Direction.RIGHT)) {
+				l.x=l.x-1;
 			}
+			else if(currentDirection.equals(Direction.LEFT)) {
+				l.x=l.x+1;
+			}
+			else if(currentDirection.equals(Direction.UP)) {
+				l.y=l.y-1;
+			}
+			else if(currentDirection.equals(Direction.DOWN)) {
+				l.y=l.y+1;
+			}
+				snake.get(i).setLocation(l);
+				
+			
 
 		}
 
@@ -117,13 +131,13 @@ Location l = getHeadLocation();
 if(l.y<0) {
 	return true;
 }
-else if(l.y>600) {
+else if(l.y>11) {
 	return true;
 }
 else if(l.x<0) {
 	return true;
 }
-else if(l.x>750) {
+else if(l.x>14) {
 	return true;
 }
 else {
@@ -153,6 +167,7 @@ for (int i = 0; i < snake.size(); i++) {
 	}
 
 	public void draw(Graphics g) {
+		g.setColor(Color.GREEN);
 		for (SnakeSegment s : snake) {
 			s.draw(g);
 		}
