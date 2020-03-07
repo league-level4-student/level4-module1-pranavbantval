@@ -203,6 +203,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		// 1. update the snake
 		snake.update();
 		// 2. if the snake is colliding with its own body
@@ -218,5 +219,6 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		}
 		// 4. call panel.repaint();
 		panel.repaint();
+		
 	}
 }

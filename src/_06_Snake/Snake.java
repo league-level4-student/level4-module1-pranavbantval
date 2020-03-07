@@ -59,23 +59,26 @@ public class Snake {
 		// 2. Iterate through the SnakeSegments in reverse order
 		// 2a. Update each snake segment to the location of the segment
 		// in front of it.
-		for (int i = snake.size() - 1; i <0; i--) {
+		for (int i = snake.size() - 1; i>0; i--) {
 			Location l = snake.get(i-1).getLocation();
 			if(currentDirection.equals(Direction.RIGHT)) {
 				l.x=l.x-1;
+				System.out.println("R");
 			}
 			else if(currentDirection.equals(Direction.LEFT)) {
 				l.x=l.x+1;
+				System.out.println("L");
 			}
 			else if(currentDirection.equals(Direction.UP)) {
 				l.y=l.y-1;
+				System.out.println("U");
 			}
 			else if(currentDirection.equals(Direction.DOWN)) {
 				l.y=l.y+1;
+				System.out.println("D");
 			}
 				snake.get(i).setLocation(l);
 				
-			
 
 		}
 
@@ -149,6 +152,7 @@ else {
 		// in the same location as any other body segment
 for (int i = 1; i < snake.size(); i++) {
 	if(getHeadLocation().equals(snake.get(i).getLocation())) {
+		System.out.println(":(");
 		return true;
 	}
 }
@@ -163,6 +167,7 @@ for (int i = 0; i < snake.size(); i++) {
 		return true;
 	}
 }
+
 		return false;
 	}
 
