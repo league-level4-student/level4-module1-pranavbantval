@@ -37,7 +37,7 @@ public class Snake {
 	public void update() {
 		// 1. use a switch statement to check on the currentDirection
 		// of the snake and calculate its next x and y position.
-		Location Newloc = getHeadLocation();
+		Location Newloc = new Location(head.getLocation().x,head.getLocation().y);
 		switch (currentDirection) {
 		case DOWN: {
 			Newloc.y = Newloc.y + 1;
@@ -138,7 +138,7 @@ for (int i = 1; i < snake.size(); i++) {
 	if(head.getLocation().equals(snake.get(i).getLocation())) {
 		System.out.println(getHeadLocation().x + ", " + getHeadLocation().y);
 		System.out.println(snake.get(i).getLocation().x + ", " + snake.get(i).getLocation().y);
-		//return true;
+		return true;
 	}
 }
 		return false;
